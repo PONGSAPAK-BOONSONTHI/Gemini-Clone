@@ -7,3 +7,6 @@
   min-height: 100vb;
   display: flex;
 }
+body {
+   background-color: rgb(68, 66, 66);
+}
