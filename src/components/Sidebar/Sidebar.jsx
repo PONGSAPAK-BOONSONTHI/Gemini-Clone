@@ -1,42 +1,48 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './Sidebar.css'
 import { assets } from '../../assets/assets'
 
 const Sidebar = () => {
+
+  const [extended, setextended] = useState(false)
+
   return (
-    <section className="sidebar">
+    <section className={`sidebar ${extended ? 'extended' : ''}`}>
       <div className="top">
-        <button className='menu'><img src={assets.menu_icon} alt="menu_icon" /></button>
+        <button onClick={() => setextended(prev=>!prev)} className='menu'><img src={assets.menu_icon} alt="menu_icon" /></button>
 
-        <div className="new-chat">
+        <div className={`new-chat ${extended ? 'extended' : ''}`}>
           <img src={assets.plus_icon} alt="plus-icon" />
-          <p>NewChat</p>
+          {extended ? <p>NewChat</p> : null}
         </div>
 
-        <div className="recent">
-          <p className="recent-title">Recent</p>
-          <div className="recent-entry">
-            <img src={assets.message_icon} alt="message-icon" />
-            <p>What is react ...</p>
+        {extended ?
+          <div className="recent">
+            <p className="recent-title">Recent</p>
+            <div className="recent-entry">
+              <img src={assets.message_icon} alt="message-icon" />
+              <p>What is react ...</p>
+            </div>
           </div>
-        </div>
-        
+          : null
+        }
       </div>
 
       <div className="bottom">
         <div className="bottom-item recent-entry">
           <img src={assets.question_icon} alt="question_icon" />
-          <p>Help</p>
+          {extended ? <p>Help</p> : null}
         </div>
 
         <div className="bottom-item recent-entry">
           <img src={assets.history_icon} alt="history_icon" />
-          <p>Actinity</p>
+          {extended ? <p>Actinity</p> : null}
+
         </div>
 
         <div className="bottom-item recent-entry">
           <img src={assets.setting_icon} alt="" />
-          <p>Setting</p>
+          {extended ? <p>Setting</p> : null}
         </div>
 
       </div>
