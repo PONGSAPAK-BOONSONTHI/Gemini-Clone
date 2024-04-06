@@ -17,7 +17,7 @@ const Sidebar = () => {
         </div>
 
         {extended ?
-          <div className="recent">
+          <div className={`recent ${extended ? 'extended' : ''}`}>
             <p className="recent-title">Recent</p>
             <div className="recent-entry">
               <img src={assets.message_icon} alt="message-icon" />

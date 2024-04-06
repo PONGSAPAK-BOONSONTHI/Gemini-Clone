@@ -5,10 +5,10 @@
   box-sizing: border-box;
   font-family: Outfit;
 }
-:root {
-  min-height: 100vb;
+#root {
+  min-height: 100vh;
   display: flex;
 }
 body {
-   background-color: rgb(68, 66, 66);
+   background-color: rgb(255, 255, 255);
 }

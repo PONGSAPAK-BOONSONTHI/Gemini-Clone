@@ -1,6 +1,6 @@
 .sidebar {
     min-height: 100vh;
-    width: 100%;
+    width: 80px;
     display: inline-flex;
     flex-direction: column;
     justify-content: space-between;
@@ -14,7 +14,7 @@
 .sidebar img {
     width: 20px;
 }
-.menu {
+.sidebar .menu {
     display: flex;
     margin-left: 7px;
     border: 0;
@@ -23,7 +23,7 @@
     cursor: pointer;
     background-color: #f0f4f9;
 }
-.menu:hover {
+.sidebar .menu:hover {
     background-color: #e2e6eb;
 }
 .sidebar .new-chat {
@@ -38,9 +38,15 @@
     color: gray;
     cursor: pointer;
 }
+.sidebar .new-chat.extended {
+    width: 85%;
+}
 .sidebar .recent {
     display: flex;
     flex-direction: column;
+}
+.sidebar .recen.extended {
+    width: 100%;
 }
 .sidebar .recent-title {
     margin-top: 30px;
