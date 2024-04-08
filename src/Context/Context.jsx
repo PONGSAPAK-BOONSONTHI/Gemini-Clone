@@ -11,14 +11,39 @@ const ContextProvider = (props) => {
     const [loading, setloading] = useState(false)
     const [ResultData, setResultData] =useState("")
 
+    const delayPara = (index, nextWord) => {
+        setTimeout(function() {
+            setResultData(prev => prev+nextWord)
+        },75*index)
+
+    }
 
     const onSent = async (prompt) => {
         setResultData("")
-        setloading("")
+        setloading(true)
         setShowResult(true)
         setRecentPrompt(input)
         const response = await runChat(input)
-        setResultData(response)
+        let ResponseArray = response.split("**")
+        let newRespons 
+        for(let i =0 ; i < ResponseArray.length; i++)
+        {
+            if (i ===0 || i%2 !==1) {
+                newRespons += ResponseArray[i]
+            }
+            else {
+                newRespons += "<b>"+ResponseArray[i]+"</b>"
+            }
+        }
+        let newRespons2 = newRespons.split("*").join("</br>")
+        let newResponseArray = newRespons2.split(" ")
+        for(let i=0; i < newResponseArray.length; i++)
+        {
+            const nextWord = newResponseArray[i]
+            delayPara(i,nextWord + " ") 
+        }
+
+        // setResultData(newRespons2)
         setloading(false)
         setinput("")
     }

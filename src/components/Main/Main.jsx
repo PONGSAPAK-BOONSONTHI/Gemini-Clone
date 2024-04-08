@@ -17,7 +17,7 @@ const Main = () => {
       </div>
 
       <div className='main-containar'>
-        {!ShowResult?
+        {!ShowResult ?
           <>
             <div className='greet'>
               <p><span>Hollo, Dev.</span></p>
@@ -43,14 +43,27 @@ const Main = () => {
               </div>
             </div>
           </>
-          :<div className='result'>
-            <div className='result-title'> 
+          : <div className='result'>
+            <div className='result-title'>
               <img src={assets.user_icon} alt="user_icon" />
               <p>{RecentPrompt}</p>
             </div>
             <div className='result-data'>
               <img src={assets.gemini_icon} alt="gemini_icon" />
-              <p dangerouslySetInnerHTML={{__html:ResultData}}></p>
+              {/* <div className='loader'>
+                <hr />
+                <hr />
+                <hr />
+              </div> */}
+              {loading ?
+                <div className='loader'>
+                  <hr />
+                  <hr />
+                  <hr />
+                </div>
+                : <p dangerouslySetInnerHTML={{ __html: ResultData }}></p>
+              }
+
             </div>
           </div>
         }
