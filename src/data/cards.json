@@ -1,0 +1,22 @@
+[
+    {
+        "title" : "Suggest beautiful places to see on upcoming road trip",
+        "nameimg" : "compass_icon",
+        "img" : "src/assets/compass_icon.png"
+    },
+    {
+        "title" : "Briefly summarize this concapt: urban planning",
+        "nameimg" : "bulb_icon",
+        "img" : "src/assets/bulb_icon.png"
+    },
+    {
+        "title" : "Brainstorm team bonding activities for our work retreat",
+        "nameimg" : "message_icon",
+        "img" : "src/assets/message_icon.png"
+    },
+    {
+        "title" : "Improve the readability of the following code",
+        "nameimg" : "code_icon",
+        "img" : "src/assets/code_icon.png"
+    }
+]
